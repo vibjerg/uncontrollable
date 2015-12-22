@@ -4,6 +4,7 @@ import express from 'express';
 import http from 'http';
 import socketio from 'socket.io';
 import path from 'path';
+import pageLayout from './templates/page';
 
 const app = express();
 const server = http.createServer(app);
@@ -17,15 +18,7 @@ app.get('', (req, res) => {
 
 // client
 app.get('/client', (req, res) => {
-  res.send(`
-   <html>
-    <head>
-    </head>
-    <body>
-    <div>this is the client</div>
-    </body>
-   </html>
-  `);
+  res.send(pageLayout('this is the content'));
 });
 
 server.listen(port, () => {
