@@ -6,17 +6,15 @@ var extractTextPlugin = require('extract-text-webpack-plugin');
 
 var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('common.js');
 var noErrorsPlugin = new webpack.NoErrorsPlugin();
-var extractCss = new extractTextPlugin('../styles/style.css');
-
-var entries = {
-  client: './src/client/client.app.js',
-  host: './src/host/host.app.js'
-};
+var extractCss = new extractTextPlugin('../public/style.css');
 
 module.exports = [{
   name: 'browser',
 
-  entry: entries,
+  entry: {
+    client: './src/client/client.app.js',
+    host: './src/host/host.app.js'
+  },
 
   output: {
     path: path.join(__dirname, 'public/js'),

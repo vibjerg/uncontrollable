@@ -9,7 +9,7 @@
     "start:watch": "supervisor -w src/server src/index.js",
     "build:dev": "webpack --progress --colors --watch -d",
     "build:prod": "webpack --progress --colors --watch -p",
-    "dev": "parallelshell \"npm run start:watch -s\" \"npm build:dev -s\""
+    "dev": "parallelshell \"npm run start:watch -s\" \"npm run build:dev -s\""
   },
   "repository": {
     "type": "git",
@@ -46,8 +46,10 @@
   },
   "devDependencies": {
     "babel-eslint": "^5.0.0-beta6",
+    "babel-loader": "^6.2.0",
     "extract-text-webpack-plugin": "^0.9.1",
     "node-sass": "^3.4.2",
+    "parallelshell": "^2.0.0",
     "sass-loader": "^3.1.2",
     "webpack": "^1.12.9"
   }
