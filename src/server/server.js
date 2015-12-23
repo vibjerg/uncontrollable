@@ -43,12 +43,12 @@ app.use('/public', express.static('public/'));
 
 // host
 app.get('', (req, res) => {
-  res.send(pageLayout('watch the mouse move', '/public/js/host.js'));
+  res.send(pageLayout('watch the mouse move <canvas id="drawingboard" />', '/public/js/host.js'));
 });
 
 // client
 app.get('/client', (req, res) => {
-  res.send(pageLayout('move the mouse', '/public/js/client.js'));
+  res.send(pageLayout('move the mouse <canvas id="drawingboard" />', '/public/js/client.js'));
 });
 
 server.listen(port, () => {
